@@ -2,6 +2,7 @@ package model;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,8 +19,8 @@ public class Banner {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int BannerID;	
 	private String BannerImageURL;
-	@Temporal(TemporalType.DATE)
-	private Date CreatedAt;
+    @Column(name = "CreatedAt", nullable = false, updatable = false)
+    private Date CreatedAt;
 	public Banner() {
 	
 	}

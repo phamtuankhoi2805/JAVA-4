@@ -64,7 +64,15 @@ public class UserDao implements DAOInterface<User> {
 		        return 0; // return 0 if insert failed
 		    }
 	}
-
+public User selectUserNameAndPass(User user) {
+	EntityManager em = JpaUtils.getEntityManager();
+	String jpql =  "select u from User u where u.Username= :Username and u.PasswordHash= : PasswordHash";
+	TypedQuery<User> query = em.createQuery(jpql,User.class);
+	query.setParameter("Username", user.getUsername());
+	query.setParameter("PasswordHash", user.getPasswordHash());
+	
+	return query.getSingleResult();
+}
 	@Override
 	public int delete(User t) {
 		 EntityManager em = JpaUtils.getEntityManager();

@@ -2,7 +2,10 @@ package model;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -12,16 +15,18 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="Comments")
 public class Comment {
-
+  @Id
+  private long ID;
 	@ManyToOne
 	@JoinColumn(name = "UserID")
 	private User user ;
+
 	@ManyToOne
 	@JoinColumn(name = "ProductID")
 	private Product product;
 	private String CommentText;
-	@Temporal(TemporalType.DATE)
-	private Date CreatedAt;
+    @Column(name = "CreatedAt", nullable = false, updatable = false)
+    private Date CreatedAt;
 	public Comment(User user, Product product, String commentText, Date createdAt) {
 	
 		this.user = user;
@@ -29,6 +34,15 @@ public class Comment {
 		CommentText = commentText;
 		CreatedAt = createdAt;
 	}
+	
+	public long getID() {
+		return ID;
+	}
+
+	public void setID(long iD) {
+		ID = iD;
+	}
+
 	public User getUser() {
 		return user;
 	}

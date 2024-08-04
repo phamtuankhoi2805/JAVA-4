@@ -13,6 +13,8 @@
 </head>
 
 <body>
+<%  String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
++ request.getContextPath(); %>
   <!-- bat đầu nav -->
    <jsp:include page="modul/nav.jsp"></jsp:include>
 
@@ -30,22 +32,26 @@
       
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="đăng-nhập" role="tabpanel" aria-labelledby="đăng-nhập-tab">
-          <form class="mt-4">
+          <form class="mt-4" action="<%= url %>/User" method="post">
             <div class="mb-3">
-              <label for="đăng-nhập-email" class="form-label">Địa chỉ email</label>
-              <input type="email" class="form-control" id="đăng-nhập-email" aria-describedby="emailHelp" required>
+              <label for="đăng-nhập-email" class="form-label">Tên Đăng Nhập</label>
+              <input type="text" class="form-control" id="TenDangNhap"  name="tenDangNhap" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
               <label for="đăng-nhập-password" class="form-label">Mật khẩu</label>
-              <input type="password" class="form-control" id="đăng-nhập-password" required>
+              <input type="password" class="form-control" name="matKhau" id="đăng-nhập-password" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+            <button type="submit" class="btn btn-primary w-100" name="hanhDong" value="login">Đăng nhập</button>
           </form>
         </div>
         
         <div class="tab-pane fade" id="đăng-ký" role="tabpanel" aria-labelledby="đăng-ký-tab">
           <form class="mt-4">
             <div class="mb-3">
+              <label for="đăng-ký-tên" class="form-label">Tên</label>
+              <input type="text" class="form-control" id="đăng-ký-tên" required>
+            </div>
+              <div class="mb-3">
               <label for="đăng-ký-tên" class="form-label">Tên</label>
               <input type="text" class="form-control" id="đăng-ký-tên" required>
             </div>

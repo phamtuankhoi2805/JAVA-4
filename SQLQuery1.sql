@@ -5,6 +5,7 @@ USE MyStore;
 GO
 
 -- Tạo bảng Users
+-- Tạo bảng Users
 CREATE TABLE Users (
     UserID INT PRIMARY KEY IDENTITY(1,1),
     Username NVARCHAR(50) NOT NULL,
@@ -21,9 +22,9 @@ CREATE TABLE Product (
     ProductName NVARCHAR(100) NOT NULL,
     Descriptions NVARCHAR(255),
     Price MONEY NOT NULL,
-	ProductType NVARCHAR(100) NOT NULL,
-	Inventory INT NOT NULL,
-	ImageURL NVARCHAR(100) NOT NULL,
+    ProductType NVARCHAR(100) NOT NULL,
+    Inventory INT NOT NULL,
+    ImageURL NVARCHAR(100) NOT NULL,
     CreatedAt DATE DEFAULT GETDATE()
 );
 
@@ -38,34 +39,34 @@ CREATE TABLE PaymentInvoice (
 
 -- Tạo bảng PaymentInvoiceDetails
 CREATE TABLE PaymentInvoiceDetails (
+    ID BIGINT IDENTITY(1,1) PRIMARY KEY,
     InvoiceID INT NOT NULL,
     ProductID INT NOT NULL,
-	UserID INT NOT NULL,
+    UserID INT NOT NULL,
     Quantity INT NOT NULL,
     Price MONEY NOT NULL,
-	PRIMARY KEY (InvoiceID,ProductID,UserID),
     FOREIGN KEY (InvoiceID) REFERENCES PaymentInvoice(InvoiceID),
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
-	FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 -- Tạo bảng FavoriteProducts
 CREATE TABLE FavoriteProducts (
+    ID BIGINT IDENTITY(1,1) PRIMARY KEY,
     UserID INT NOT NULL,
     ProductID INT NOT NULL,
     CreatedAt DATE DEFAULT GETDATE(),
-	PRIMARY KEY(UserID,ProductID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
 );
 
 -- Tạo bảng Comments
 CREATE TABLE Comments (
+    ID BIGINT IDENTITY(1,1) PRIMARY KEY,
     UserID INT NOT NULL,
     ProductID INT NOT NULL,
     CommentText NVARCHAR(1000) NOT NULL,
     CreatedAt DATE DEFAULT GETDATE(),
-	PRIMARY KEY(UserID,ProductID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
 );

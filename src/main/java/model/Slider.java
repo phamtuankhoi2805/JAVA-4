@@ -2,6 +2,7 @@ package model;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,8 +14,8 @@ public class Slider {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int SliderID;	
 	private String SliderImageURL;
-	@Temporal(TemporalType.DATE)
-	private Date CreatedAt;
+    @Column(name = "CreatedAt", nullable = false, updatable = false)
+    private Date CreatedAt;
 	public Slider() {
 		
 	}

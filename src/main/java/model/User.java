@@ -3,6 +3,7 @@ package model;
 import java.sql.Date;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,7 @@ private String PasswordHash;
 private String Email;
 private String FullName;
 private String UserType;
-@Temporal(TemporalType.DATE)
+@Column(name = "CreatedAt", nullable = false, updatable = false)
 private Date CreatedAt;
 @OneToMany(mappedBy = "user")
 private Set<PaymentInvoice> paymentInvoices;

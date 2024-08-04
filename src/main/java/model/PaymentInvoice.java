@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,8 +24,10 @@ public class PaymentInvoice {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int InvoiceID;
 private BigDecimal TotalAmount;
-@Temporal(TemporalType.DATE)
+@Column(name = "CreatedAt", nullable = false, updatable = false)
 private Date CreatedAt;
+
+
 
 @ManyToOne
 @JoinColumn(name = "UserID")

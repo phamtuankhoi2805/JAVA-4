@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+        <%  String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
++ request.getContextPath(); %>
   <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.jsp">Floda</a>
@@ -48,10 +51,22 @@
   <i class="fa-regular fa-heart"></i>
   <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">5</span>
 </a>
-        
-        <a href="Login.jsp" class="btn btn-link text-dark">
-          <i class="fa-solid fa-user"></i>
-        </a>
+   <c:if test="${sessionScope.user == null}">
+  <a href="Login.jsp" class="btn btn-link text-dark">
+    <i class="fa-solid fa-user"></i>
+  </a>
+</c:if>
+        <c:if test="${ sessionScope.user !=null}">
+<div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-right-from-bracket"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="<%= url %>/User?hanhDong=thoat">Thoát</a></li>
+  </ul>
+</div>
+                </c:if>
       </div>
     </div>
   </nav>

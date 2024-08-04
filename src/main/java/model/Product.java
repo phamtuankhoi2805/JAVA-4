@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +26,7 @@ private BigDecimal Price;
 private String ProductType;
 private int Inventory;
 private String ImageURL;
-@Temporal(TemporalType.DATE)
+@Column(name = "CreatedAt", nullable = false, updatable = false)
 private Date CreatedAt;
 
 
