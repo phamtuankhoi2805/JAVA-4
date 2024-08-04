@@ -74,4 +74,30 @@
     border-radius: 50%;
     margin-right: 5px;
   }
-  
+  .payment-icons img {
+  margin-right: 10px;
+}
+  .wishlist-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+      body {
+      background-color: #000;
+      color: #fff;
+    }
+    .form-control, .form-control:focus {
+      background-color: transparent;
+      border-color: #ccc;
+      color: #fff;
+    }
+    .btn-primary {
+      background-color: #c00;
+      border-color: #c00;
+    }
+    .btn-primary:hover {
+      background-color: #900;
+      border-color: #900;
+    }

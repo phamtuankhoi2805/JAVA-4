@@ -9,9 +9,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" type="text/css" href="index.css">
+     <style >
+     
+       .carousel-item img {
+    max-width: 20%; /* Giới hạn độ rộng tối đa của hình ảnh */
+    max-height: 10%; /* Giới hạn độ cao tối đa của hình ảnh */
+    object-fit: contain; /* Giữ tỷ lệ hình ảnh */
+  }
+     </style>
 </head>
 
 <body>
+<%      String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
++ request.getContextPath(); %>
   <!-- bat đầu nav -->
   <jsp:include page="modul/nav.jsp"></jsp:include>
   <!-- bat đầu product -->
@@ -26,8 +36,15 @@
   
     <div class="row">
       <div class="col-lg-6">
-        <img src="img/product/product-details-img1.jpg" alt="Bông hoa cúc hồng" class="img-fluid">
+        <img src="<%=url %>/views/image/product/product-2.jpg" alt="Bông hoa cúc hồng" class="img-fluid" width="100%">
+        <br>
+
+
       </div>
+
+
+
+      
       <div class="col-lg-6">
         <h1>Bông hoa cúc hồng</h1>
         <p class="lead">1 Đánh giá</p>
@@ -57,35 +74,7 @@
           </div>
           
   
-        <div class="mb-4">
-          <label for="color" class="form-label">Màu sắc:</label>
-          <div class="d-flex">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="color" id="color1" value="option1" checked>
-              <label class="form-check-label" for="color1">
-                <div class="color-swatch bg-primary"></div>
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="color" id="color2" value="option2">
-              <label class="form-check-label" for="color2">
-                <div class="color-swatch bg-secondary"></div>
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="color" id="color3" value="option3">
-              <label class="form-check-label" for="color3">
-                <div class="color-swatch bg-success"></div>
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="color" id="color4" value="option4">
-              <label class="form-check-label" for="color4">
-                <div class="color-swatch bg-warning"></div>
-              </label>
-            </div>
-          </div>
-        </div>
+      
   
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <button class="btn btn-success me-md-2" type="button">Thêm vào giỏ hàng</button>
@@ -143,7 +132,7 @@
       <div class="col">
         <a href="#">
           <div class="card card-hover">
-            <img src="img/product/product-12.jpg" class="card-img-top" alt="Bó hoa màu hồng">
+            <img src="<%=url %>/views/img/product/product-12.jpg" class="card-img-top" alt="Bó hoa màu hồng">
             <div class="card-body">
               <h5 class="card-title">Bó hoa màu hồng</h5>
               <p class="card-text">

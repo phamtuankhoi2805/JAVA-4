@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="stylesheet" type="text/css" href="index.css">
@@ -14,6 +14,7 @@
      }
      </style>
 </head>
+<% int r = 122; %>
 <body>
 <div class="container">
 <div class="min-vh-100 bg-light text-dark">
@@ -80,8 +81,8 @@
       labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
       datasets: [{
         label: 'Doanh thu',
-        data: [88, 76, 70, 88, 55, 60, 70],
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        data: [<%=r %>, 76, 70, 88, 55, 60, 70],
+        backgroundColor: 'rgba(200, 162, 235, 0.2)',
         borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 1
       }]

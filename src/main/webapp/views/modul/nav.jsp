@@ -12,7 +12,7 @@
             <a class="nav-link active" aria-current="page" href="index.jsp">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Giới Thiệu</a>
+            <a class="nav-link" href="GioiThieu.jsp">Giới Thiệu</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -21,14 +21,14 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="DanhMuc.jsp">Hoa Tươi</a></li>
               <li><a class="dropdown-item" href="DanhMuc.jsp">Hoa Khô</a></li>
-          
+           <li><a class="dropdown-item" href="DanhMuc.jsp">Top Friday</a></li>
+                      <li><a class="dropdown-item" href="DanhMuc.jsp">Black Friday</a></li>
+                                   <li><a class="dropdown-item" href="DanhMuc.jsp">10% Off</a></li>
             </ul>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Liên hệ</a>
+            <a class="nav-link" href="LienHe.jsp">Liên hệ</a>
           </li>
         </ul>
       </div>
@@ -43,6 +43,12 @@
             <span class="visually-hidden">tin nhắn chưa đọc</span>
           </span>
         </a>
+        
+<a href="yeuThich.jsp" class="btn btn-link text-dark me-2 position-relative">
+  <i class="fa-regular fa-heart"></i>
+  <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">5</span>
+</a>
+        
         <a href="Login.jsp" class="btn btn-link text-dark">
           <i class="fa-solid fa-user"></i>
         </a>
@@ -122,5 +128,16 @@
     <a href="ThanhToan.jsp" class="btn btn-success" style="background-color: black; color: white;"><i class="fa fa-share"></i> Thanh toán</a>
   </div>
 </div>
+    </div>
+  </div>
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="searchOffcanvas" aria-labelledby="searchOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="searchOffcanvasLabel">Search</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Your search options will be displayed here.
+      </div>
     </div>
   </div>

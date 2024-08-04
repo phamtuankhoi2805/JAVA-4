@@ -18,11 +18,11 @@
 	<jsp:include page="modul/nav.jsp"></jsp:include>
 	<div class="bg-light py-8">
 		<div class="container mx-auto text-center">
-			<h1 class="fs-3 fw-semibold text-body">Giỏ Hàng</h1>
+			<h1 class="fs-3 fw-semibold text-body">Danh Mục</h1>
 			<div
 				class="d-flex justify-content-center align-items-center gap-2 mt-2 text-muted">
 				<i class="fa-solid fa-house"></i> <span>/</span> <span
-					class="text-danger">Giỏ Hàng</span>
+					class="text-danger">Danh Mục</span>
 			</div>
 		</div>
 	</div>
@@ -57,12 +57,7 @@
 					<li class="list-group-item"><input type="checkbox" /> Cổ điển</li>
 				</ul>
 
-				<h5>Màu sắc</h5>
-				<ul class="list-group mb-3">
-					<li class="list-group-item"><input type="checkbox" /> Đỏ</li>
-					<li class="list-group-item"><input type="checkbox" /> Trắng</li>
-					<li class="list-group-item"><input type="checkbox" /> Hồng</li>
-				</ul>
+			
 
 				<h5>Kích cỡ</h5>
 				<ul class="list-group mb-3">
@@ -70,8 +65,8 @@
 					<li class="list-group-item"><input type="checkbox" /> M</li>
 					<li class="list-group-item"><input type="checkbox" /> L</li>
 				</ul>
-
-
+            
+<button type="button" class="btn btn-success" style="width: 100%">Tìm Kiếm</button>
 			</div>
 
 			<div class="col-md-9">

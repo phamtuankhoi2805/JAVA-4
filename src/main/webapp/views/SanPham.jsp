@@ -20,6 +20,7 @@ a {
 }
 </style>
 <body>
+ <jsp:include page="modul/nav.jsp"></jsp:include>
 	<div class="container">
 		<div class="min-vh-100 bg-light text-dark">
 			<div class="d-flex">
@@ -185,7 +186,7 @@ a {
 		</div>
 
 	</div>
-
+ <jsp:include page="modul/footer.jsp"></jsp:include>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
 		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -15,17 +15,7 @@
   <!-- bat đầu nav -->
   <jsp:include page="modul/nav.jsp"></jsp:include>
 
-  <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="searchOffcanvas" aria-labelledby="searchOffcanvasLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="searchOffcanvasLabel">Search</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div>
-        Your search options will be displayed here.
-      </div>
-    </div>
-  </div>
+
 
 
   <!-- end nav -->
