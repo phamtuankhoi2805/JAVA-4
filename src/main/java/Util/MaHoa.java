@@ -24,7 +24,7 @@ public class MaHoa {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(toSHA1("123456"));
+		System.out.println(toSHA1("hash4"));
 	}
 	
 }

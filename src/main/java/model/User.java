@@ -27,7 +27,7 @@ private String PasswordHash;
 private String Email;
 private String FullName;
 private String UserType;
-@Column(name = "CreatedAt", nullable = false, updatable = false)
+@Column(name = "CreatedAt")
 private Date CreatedAt;
 @OneToMany(mappedBy = "user")
 private Set<PaymentInvoice> paymentInvoices;

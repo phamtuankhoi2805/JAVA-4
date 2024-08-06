@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+           <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,62 +15,36 @@
 
 <body>
 <%  String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-+ request.getContextPath(); %>
++ request.getContextPath();
+
+
+%>
   <!-- bat đầu nav -->
    <jsp:include page="modul/nav.jsp"></jsp:include>
 
 <!-- login -->
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="form-container">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="đăng-nhập-tab" data-bs-toggle="tab" data-bs-target="#đăng-nhập" type="button" role="tab" aria-controls="đăng-nhập" aria-selected="true">Đăng nhập</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="đăng-ký-tab" data-bs-toggle="tab" data-bs-target="#đăng-ký" type="button" role="tab" aria-controls="đăng-ký" aria-selected="false">Đăng ký</button>
-        </li>
-      </ul>
-      
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="đăng-nhập" role="tabpanel" aria-labelledby="đăng-nhập-tab">
-          <form class="mt-4" action="<%= url %>/User" method="post">
+        <h2 class="nav-link active" style="width: 100% ;text-align: center;" id="đăng-nhập-tab" data-bs-target="đăng-nhập" role="tab" aria-controls="đăng-nhập">Đăng nhập</h2>
+                 <p class="alert " id="error-message" role="alert">
+  ${mes}
+</p>
+        <form class="mt-4" action="<%= url %>/User" method="post">
             <div class="mb-3">
-              <label for="đăng-nhập-email" class="form-label">Tên Đăng Nhập</label>
-              <input type="text" class="form-control" id="TenDangNhap"  name="tenDangNhap" aria-describedby="emailHelp" required>
+                <label for="đăng-nhập-email" class="form-label">Tên Đăng Nhập</label>
+                <input type="text" class="form-control" id="TenDangNhap" name="tenDangNhap" aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
-              <label for="đăng-nhập-password" class="form-label">Mật khẩu</label>
-              <input type="password" class="form-control" name="matKhau" id="đăng-nhập-password" required>
+                <label for="đăng-nhập-password" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" name="matKhau" id="đăng-nhập-password" required>
             </div>
+
             <button type="submit" class="btn btn-primary w-100" name="hanhDong" value="login">Đăng nhập</button>
-          </form>
-        </div>
-        
-        <div class="tab-pane fade" id="đăng-ký" role="tabpanel" aria-labelledby="đăng-ký-tab">
-          <form class="mt-4">
-            <div class="mb-3">
-              <label for="đăng-ký-tên" class="form-label">Tên</label>
-              <input type="text" class="form-control" id="đăng-ký-tên" required>
-            </div>
-              <div class="mb-3">
-              <label for="đăng-ký-tên" class="form-label">Tên</label>
-              <input type="text" class="form-control" id="đăng-ký-tên" required>
-            </div>
-            <div class="mb-3">
-              <label for="đăng-ký-email" class="form-label">Địa chỉ email</label>
-              <input type="email" class="form-control" id="đăng-ký-email" aria-describedby="emailHelp" required>
-              <div id="emailHelp" class="form-text">Chúng tôi sẽ không bao giờ chia sẻ email của bạn với bất kỳ ai khác.</div>
-            </div>
-            <div class="mb-3">
-              <label for="đăng-ký-password" class="form-label">Mật khẩu</label>
-              <input type="password" class="form-control" id="đăng-ký-password" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
-          </form>
-        </div>
-      </div>
+            <a href="<%=url %>/views/dangky.jsp" class="btn btn-secondary w-100 mt-3">Đăng ký</a>
+        </form>
     </div>
-  </div>
+</div>
+
 
 <!-- end login -->
 <!-- foooter -->
